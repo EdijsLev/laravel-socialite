@@ -64,6 +64,19 @@
                                 @endif
                             </div>
                         </div>
+                        <div>
+                            @foreach(['facebook', 'twitter', 'google', 'linkedin'] as $provider)
+                                <a class="btn btn-link" href="{{ route('social.login', ['provider' => $provider]) }}">Login with {{ ucwords($provider) }}</a>
+                            @endforeach
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    @foreach ($errors->all() as $error)
+                                        <div>{{ $error }}</div>
+                                    @endforeach
+                                </div>
+                            @endif
+
+                        </div>
                     </form>
                 </div>
             </div>
