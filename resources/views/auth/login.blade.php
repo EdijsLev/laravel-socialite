@@ -65,7 +65,7 @@
                             </div>
                         </div>
                         <div>
-                            @foreach(['facebook', 'twitter', 'google', 'linkedin'] as $provider)
+                            @foreach(['facebook', 'twitter', 'google'] as $provider)
                                 <a class="btn btn-link" href="{{ route('social.login', ['provider' => $provider]) }}">Login with {{ ucwords($provider) }}</a>
                             @endforeach
                             @if ($errors->any())
